@@ -1,4 +1,4 @@
-module Spree::ProductZoom; end
+#module Spree::ProductZoom; end
 
 module SpreeProductZoom
   class Engine < Rails::Engine
