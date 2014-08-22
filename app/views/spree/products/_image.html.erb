@@ -1,12 +1,12 @@
 <% if defined?(image) && image %> 
   <%= link_to image_tag(image.attachment.url(:product), :itemprop => "image", :title => "title"), image.attachment.url(:original), :class => 'fancybox zoom-image' %>
   <br />
-  <%= link_to image_tag('zoom.gif', :title => "title"), image.attachment.url(:original), :class => 'fancybox zoom-image' %>
+  <%= link_to image_tag('zoom.gif'), image.attachment.url(:original), :title => 'title', :class => 'fancybox zoom-image' %>
 <% else %>
   <% if @product.images.empty? %>
     <%= product_image(@product, :itemprop => "large") %>
   <% else %>
-    <%= link_to product_image(@product, :itemprop => "image"), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'fancybox zoom-image large-image', :rel => 'gallery' %>
+    <%= link_to product_image(@product, :itemprop => "image"), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'fancybox zoom-image large-image', :rel => 'gallery', :title => "title #{@product.images.first.alt}" %>
     <br />
     <%= link_to image_tag('zoom.gif', :class => 'click-to-zoom'), @product.images.first.attachment.url(Spree::ProductZoom::Config.default_image_style), :class => 'zoom-image click-to-zoom', :rel => 'gallery' %>
     <div id="gallery" style="display:none;">
