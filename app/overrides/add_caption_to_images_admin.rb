@@ -4,6 +4,6 @@ Deface::Override.new(virtual_path: 'spree/admin/images/_form',
                      text: 
                      '<div class="field omega five columns">
                       <%= f.label "Caption" %><br>
-                      <%= f.text_area :alt, :rows => 4, :class => "fullwidth" %>
+                      <%= f.text_area :caption, :rows => 4, :class => "fullwidth" %>
                       </div>"'
                     )
